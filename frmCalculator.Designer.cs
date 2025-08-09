@@ -111,7 +111,7 @@
             // 
             btnEqual.BackColor = SystemColors.ActiveCaption;
             btnEqual.FlatStyle = FlatStyle.Popup;
-            btnEqual.Font = new Font("Lucida Sans Typewriter", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEqual.Font = new Font("Lucida Sans Typewriter", 14F);
             btnEqual.Location = new Point(216, 230);
             btnEqual.Name = "btnEqual";
             btnEqual.Size = new Size(126, 37);

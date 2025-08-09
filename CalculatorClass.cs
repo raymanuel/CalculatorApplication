@@ -4,14 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/************
+ * @author:pineda, rm
+ * ********
+ * ******
+ *********
+ */
 namespace CalculatorApplication
 {
 
+    //generic delegate
     public delegate Tresult Formula<T1, T2, Tresult>(T1 arg1, T2 arg2);
     public class CalculatorClass
     {
-        public Formula<double, double, double> formula;
 
+        //declare generic delegate variable
+        public Formula<double, double, double>? formula;
+        
+        
         public double GetSum(double x, double y)
         {
             return x + y;
@@ -34,23 +44,23 @@ namespace CalculatorApplication
 
 
 
-
-
-        //EVENT
-
         private Formula<double, double, double>? _calculateEvent;
 
+
+        //EVENT ACCESSOR
         public event Formula<double, double, double> CalculateEvent
         {
             add
             {
-                Console.WriteLine("Added the delegate");
                 _calculateEvent += value;
+                Console.WriteLine("Added the delegate");
+                
             }
             remove
             {
-                Console.WriteLine("Removed the Delegate");
                 _calculateEvent -= value;
+                Console.WriteLine("Removed the Delegate");
+                
             }
 
 
@@ -63,8 +73,15 @@ namespace CalculatorApplication
 
 
 
-
+        
 
     }//end of class CalculatorClass
 
+
 }//end of namespace CalculatorApplication
+
+/*****
+*** @author: pineda, rm
+****
+*****
+*/

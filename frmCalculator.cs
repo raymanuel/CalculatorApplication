@@ -3,7 +3,9 @@ namespace CalculatorApplication
     public partial class frmCalculator : Form
     {
 
+
         private CalculatorClass cal;
+
         public frmCalculator()
         {
             InitializeComponent();
@@ -18,13 +20,24 @@ namespace CalculatorApplication
             num1 = Convert.ToDouble(txtBoxInput1.Text);
             num2 = Convert.ToDouble(txtBoxInput2.Text);
 
+
+            if (cbOperator.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an operator.");
+                return;
+            }
+
             if (cbOperator.Text == "+")
             {
                 cal.formula = cal.GetSum;
                 cal.CalculateEvent += null;
                 cal.CalculateEvent += cal.formula;
 
+                //trigger/call the event
+                //and pass the two numbers to the delegate method
                 double result = cal.TriggerCalculation(num1, num2);
+
+                //display the result in the labels
                 lblDisplayTotal.Text = result.ToString();
             }
 
@@ -76,5 +89,7 @@ namespace CalculatorApplication
 
 
             }
+        }
     }
+
 }

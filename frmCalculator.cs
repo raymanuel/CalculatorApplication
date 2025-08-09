@@ -1,5 +1,13 @@
 namespace CalculatorApplication
 {
+
+
+ /************
+ * @author:pineda, rm
+ * ********
+ * ******
+ *********
+ */
     public partial class frmCalculator : Form
     {
 
